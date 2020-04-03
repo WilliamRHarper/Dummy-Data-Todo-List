@@ -3,14 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="todo.js"></script>
     <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+      }
+      .redText{
+        color: red;
+      }
+      .greenText{
+        color: green;
+      }
+      #container {
+        display: inline-block;
+        justify-content: center;
+        width: 1200px;
+        height: 3680px;
+        background-color: cyan;
+      }
+      button {
+        width: 120px;
+        height: 40px;
+        background-color: greenyellow;
+        border-radius: 48%;
+        margin-top: 20px;
+      }
+      #buttons {
+        margin-left: 30%;
+      }
+      #theList {
+        margin-left: 30%;
+      }
+    </style>
 </head>
 <body>
-    <button onclick="fetchTodos()">Fetch Todos</button>
-    <button onclick="logTodos()">Log Todos</button>
-    <button onclick="populateTodos()">Populate Todos</button>
-    <ol id="todo-list">
+  <div id=container>
+    <div id=buttons>
+      <button onclick="fetchTodos()">Fetch Todos</button>
+      <button onclick="logTodos()">Log Todos</button>
+      <button onclick="populateTodos()">Populate Todos</button>
+    </div>
+    <div id= "theList">
+      <ol id="todo-list">
       <!-- LIs will go here -->
-    </ol>
+      </ol>
+    </div>
+  </div>
 </body>
 </html>

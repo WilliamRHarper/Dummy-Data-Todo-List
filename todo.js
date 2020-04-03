@@ -1,6 +1,6 @@
    // We'll pre-populate this array with a couple objects just so it's not undefined if your internet connection isn't working properly.
 
-   let arrayOfTodos = [
+   /*let arrayOfTodos = [
     {
     "userId": 14,
     "id": 1,
@@ -12,7 +12,7 @@
     "id": 2,
     "title": "delectus aut autem",
     "completed": false
-  }]
+  }]*/
 
   const fetchTodos = () => {
     fetch('https://jsonplaceholder.typicode.com/todos')
@@ -26,9 +26,17 @@
 
   const populateTodos = () => {
     for (let i = 0; i < arrayOfTodos.length; i++){
-    const theItem = document.createElement("li");                 // Create a <p> element
-    theItem.innerHTML = arrayOfTodos[0].title;                // Insert text
+    let theItem = document.createElement("li");
+    let textNode = document.createTextNode(arrayOfTodos[i].title);
+    theItem.appendChild(textNode);                 // Create a <p> element
+    theItem.innerHTML = arrayOfTodos[i].title;
+    if (!arrayOfTodos[i].completed){
+      theItem.classList.add("redText");
+    }else {
+      theItem.classList.add("greenText");
+    }
     document.getElementById("todo-list").appendChild(theItem);
     }
   }
+
 
