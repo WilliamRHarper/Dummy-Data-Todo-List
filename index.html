@@ -30,22 +30,39 @@
         border-radius: 48%;
         margin-top: 20px;
       }
-      #buttons {
+      .buttons {
         margin-left: 30%;
       }
-      #theList {
+      #myList {
         margin-left: 30%;
+      }
+      input:placeholder-shown {
+        text-align: center;
+        border-color: black;
+      }
+      #idField {
+        margin-left: 35%;
+        margin-top: 20px;
       }
     </style>
 </head>
 <body>
   <div id=container>
-    <div id=buttons>
+    <div class=buttons>
       <button onclick="fetchTodos()">Fetch Todos</button>
       <button onclick="logTodos()">Log Todos</button>
       <button onclick="populateTodos()">Populate Todos</button>
     </div>
-    <div id= "theList">
+    <div id="idField">
+      <label for="idNumber">ID Number</label>
+      <input required type="number" name="idNumber" id="idNumber" class="field" placeholder="1 - 10" min="1" max="10">
+  </div>
+  <div class=buttons>
+    <button onclick="clearAndFilter()">Clear/Filter</button>
+    <button onclick="clearAndCompleted()">Completed</button>
+    <button onclick="notCompleted()">Not Completed</button>
+  </div>
+    <div id= "myList">
       <ol id="todo-list">
       <!-- LIs will go here -->
       </ol>
