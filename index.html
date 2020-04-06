@@ -19,7 +19,7 @@
       #container {
         display: inline-block;
         justify-content: center;
-        width: 1200px;
+        width: 1400px;
         height: 3680px;
         background-color: cyan;
       }
@@ -33,6 +33,9 @@
       .buttons {
         margin-left: 30%;
       }
+      #oneButton {
+        margin-left: 39.3%;
+      }
       #myList {
         margin-left: 30%;
       }
@@ -44,6 +47,7 @@
         margin-left: 35%;
         margin-top: 20px;
       }
+
     </style>
 </head>
 <body>
@@ -56,12 +60,15 @@
     <div id="idField">
       <label for="idNumber">ID Number</label>
       <input required type="number" name="idNumber" id="idNumber" class="field" placeholder="1 - 10" min="1" max="10">
-  </div>
-  <div class=buttons>
-    <button onclick="clearAndFilter()">Clear/Filter</button>
-    <button onclick="clearAndCompleted()">Completed</button>
-    <button onclick="notCompleted()">Not Completed</button>
-  </div>
+    </div>
+    <div class=buttons>
+      <button onclick="clearAndFilter()">Clear/Filter</button>
+      <button onclick="clearAndCompleted()">Completed</button>
+      <button onclick="notCompleted()">Not Completed</button>
+    </div>
+    <div id=oneButton>
+      <button onclick="oneStop()">One Stop</button>
+    </div>
     <div id= "myList">
       <ol id="todo-list">
       <!-- LIs will go here -->

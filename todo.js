@@ -120,11 +120,33 @@
         }
       }
 
-
-
-  
-
-
-
-
-
+      const oneStop = () => {
+        var element = document.getElementById("democlass");
+        element.parentNode.removeChild(element);
+        // const filteredToDos = theToDos.filter(todo => todo.userId == document.getElementById("idNumber").value);
+        const getTheResult = theToDos.filter(toDo => toDo.userId == document.getElementById("idNumber").value);
+        for (let i = 0; i < getTheResult.length; i++){
+          let theAList = document.createElement("ol");
+          document.getElementById("myList").appendChild(theAList);
+          theAList.setAttribute("id", "firstClass");
+          let theAItem = document.createElement("li");
+          if (getTheResult[i].completed === false){
+            theAItem.innerHTML = "User Id: " + getTheResult[i].userId + ",  Title: " + getTheResult[i].title + ",  Completed: " + getTheResult[i].completed;
+          }else {
+            continue;
+          }
+          document.getElementById("firstClass").appendChild(theAItem);
+        }
+        for (let i = 0; i < getTheResult.length; i++){
+          let theBList = document.createElement("ol");
+          document.getElementById("myList").appendChild(theBList);
+          theBList.setAttribute("id", "secondClass");
+          let theBItem = document.createElement("li");
+          if (getTheResult[i].completed === true){
+          theBItem.innerHTML = "User Id: " + getTheResult.userId + ",  Title: " + getTheResult[i].title + ",  Completed: " + getTheResult[i].completed;
+           }else {
+             continue;
+           }
+             document.getElementById("secondClass").appendChild(theBItem);
+          }
+        }   
